@@ -1,0 +1,23 @@
+idea:
+  title: Is it easier to test if Talkie generalizes?
+  domain: artificial_intelligence
+  hypothesis: 'Because Talkie (the 1930 cutoff LLM) was trained on data that covers
+    human experience much more sparsely than current LLMs, it may be easier to test
+    whether it generalizes.
+
+    '
+  background:
+    description: 'Talkie (the 1930 cutoff LLM) was trained on data that covers human
+      experience much more sparsely than current LLMs. Does that make it easier to
+      test that it generalizes?
+
+      '
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/uC8kgtPUNgwnXKQSNGSN
+    idea_id: is_it_easier_to_test_if_talkie_20260512_015211_7c48bda6
+    created_at: '2026-05-12T01:52:11.395764'
+    status: submitted
+    github_repo_name: talkie-generalization-e993-claude
+    github_repo_url: https://github.com/Hypogenic-AI/talkie-generalization-e993-claude
