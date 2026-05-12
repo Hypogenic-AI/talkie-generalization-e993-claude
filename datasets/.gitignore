@@ -1,0 +1,20 @@
+# Exclude large dataset files from git
+*.tar
+*.tar.gz
+*.zip
+*.parquet
+*.arrow
+*.bin
+
+# Allow small text/CSV files (e.g. MMLU is only ~4MB, HumanEval ~44KB)
+!*.csv
+!*.jsonl
+!*.jsonl.gz
+!*.txt
+!*.json
+
+# Always include documentation
+!.gitignore
+!README.md
+!**/README.md
+!**/seed_probes.jsonl

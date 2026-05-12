@@ -1,0 +1,44 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Does the Meta-Hypothesis Hold?}
+
+\textbf{Yes, with three caveats.} First, \emph{sharpness of the probe matters more than the cutoff alone}. Our hand-anchored post-1930 probe battery yields a 6.84 \bpt paired surprisal gap ($p < 0.001$, $n=30$) because the items are deliberately keyed to post-1930 vocabulary. \mmlu's per-question heuristic date stratification, by contrast, yields only a 10 pp gap on tagged-post-1930 items --- similar to the 14 pp overall gap --- because most \mmlu questions do not actually depend on post-1930 facts even when they mention post-1930 vocabulary. The cleanest \mmlu cutoff signal is per-subject (\tabref{tab:mmlu_subjects}), where epistemically modern medical / geographical / social-science subjects show 25--75 pp gaps.
+
+Second, \emph{the bits-of-evidence advantage is per-item and capped only by the numerical floor on $P(\text{memo})$}. This is the load-bearing claim. It is methodological, not quantitative --- \talkienineteen does not ``need fewer items'' than modern LLMs; it makes each item \emph{interpretable in a way that modern LLMs cannot, without expensive external evidence}.
+
+Third, \emph{the base-model comparison is what is clean}. The matched-FLOPs \talkieweb is the load-bearing baseline; \gptfour differs from both Talkie variants in size, training compute, and post-training, so it functions only as the modern saturation reference and not as a controlled generalization measurement.
+
+\subsection{In-Context Generalization Is the Most Striking Signal}
+
+Even at 13B / no fine-tuning / no RL, \talkienineteen successfully extends Python idioms from a single worked example: arrow-function $\to$ result, conditional $\to$ branch, list comprehension $\to$ values, \texttt{def}/\texttt{return} $\to$ body. Python was first released in 1991; by construction \talkienineteen has zero prior exposure. Four of eleven ICL items succeed exactly and several others are syntactically Python-shaped (correct token type, wrong value). This is positive evidence of generalization in its purest, most uncontaminated form, and it would be much harder to demonstrate on any modern LLM, because the same items would always be subject to the question ``is this generalization or is the model just remembering the worked-example pattern from training?''
+
+\subsection{Why MMLU Was a Weaker Signal Than the Probes}
+
+\mmlu items are written in modern English and assume modern framings even when the target \emph{fact} is pre-1930. \talkienineteen is at a stylistic disadvantage on the prompt format itself, which depresses its score uniformly across date strata and washes out the per-question cutoff signal. The probe battery sidesteps this by writing the prompts in pre-1930-compatible prose. We read this as a constraint on \emph{how to design} a cutoff-exploiting probe rather than evidence against the meta-hypothesis: the diagnostic is sharp when the probe is sharp.
+
+\subsection{Why HumanEval Failed for the Talkies in Our Protocol}
+
+The Talkie 13B base models do not produce passing \humaneval code at greedy pass@1 with $k \in \{0, 3\}$ prompts. The failure is alignment, not knowledge: the models treat the \humaneval prompt as ``continue this Python source file'' instead of ``complete the function body,'' or, with $k=3$, regurgitate demo bodies. The cleaner ICL generalization signal lives in our short post-1930 probes (\secref{sec:results:probes}), where the prompts end mid-expression and directly elicit one-token continuations. The Talkie team's blog \humaneval numbers were obtained at high-temperature pass@100, fundamentally different from greedy pass@1; reconciling the two protocols would require a KV-cache patch we left to future work.
+
+\subsection{Why GPT-4.1 Also Sometimes Fails at Strict EM}
+
+On the post-1930 probe set, strict substring matching scored \gptfour at 77\% (23/30) but the lenient (case + punctuation + whitespace normalized) match upgraded it to 80\%. The 7 remaining misses are not knowledge failures --- they are \emph{expression} failures (\eg \gptfour says ``1994'' for Wiles's proof when the first announcement occurred; the gap was fixed in 1995). A more semantic scorer would push \gptfour to 90\%+. This strengthens the meta-conclusion: \gptfour's true accuracy is so high that the date partition tells us \emph{nothing} about how much of that comes from generalization vs. memorization.
+
+\subsection{Threats to Validity}
+
+\textbf{Subject-mix confound.} \talkienineteen and \talkieweb differ in what is in the corpus as well as in when it ends --- the Talkie README warns about this. We rely on matched architecture and FLOPs to absorb most of it but interpret all absolute \talkienineteen vs. \talkieweb gaps as upper bounds on the cutoff effect.
+
+\textbf{Tokenizer asymmetry.} Talkie's tokenizer was trained on pre-1930 text. Modern terms (\eg ``iPhone'') fragment into many tokens, biasing per-token surprisal numbers. We mitigate by reporting \bpt rather than raw NLL, but the bias is not zero.
+
+\textbf{OCR noise} in the pre-1930 corpus may suppress \talkienineteen's pre-1930 performance below what a clean-transcription model would achieve.
+
+\textbf{Heuristic date detector.} Our regex+keyword detector for \mmlu is imperfect; the Talkie team's own detector is more sophisticated. Imperfect tagging blurs strata and makes us \emph{underestimate} the cleanness of the cutoff on \mmlu.
+
+\textbf{$P(\text{memo}) = 1$ is conservative} for the moderns; $P(\text{memo}) \approx 0$ is the structural ideal for \talkienineteen. Neither extreme is exactly right in practice --- modern corpora are not perfect supersets, and Talkie's pre-1930 corpus may contain occasional anachronisms (\eg re-printings with later editorial notes). Our numbers are bounds, not point estimates.
+
+\textbf{\humaneval is inconclusive} for the Talkie base models because of base-model alignment issues that confound the cutoff signal we wanted to measure.
+
+\subsection{Broader Implications}
+
+If the meta-hypothesis generalizes, time-cut LLMs are not merely artifacts for studying memorization or auditing modern models --- they are a class of \emph{evaluation infrastructure} that lets benchmark designers stop building contamination-controlled benchmarks and start building \emph{cutoff-exploiting} ones. The design problem changes from ``how do I write a contamination-free test'' to ``how do I write a test whose answer is sharply anchored after the cutoff date.'' Our experiments suggest this works for hand-anchored factual probes (decisively) and for in-context-learning probes (with care around prompt format), but works less well for naturalistic benchmarks (\mmlu) whose authors did not write items with a 1930 framing in mind.

@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "model": "1930",
+    "k_demos": 3,
+    "n_problems": 7,
+    "n_pass": 0,
+    "pass_at_1": 0.0,
+    "note": "PARTIAL \u2014 first 7 of 164 items, run aborted early due to base-model alignment failure (model loops on demo patterns)"
+  },
+  "records": [
+    {
+      "task_id": "HumanEval/0",
+      "entry_point": "has_close_elements",
+      "completion": "    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n",
+      "raw_completion": "    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n    \"\"\"\n",
+      "passed": false,
+      "grade_reason": "AssertionError: "
+    },
+    {
+      "task_id": "HumanEval/1",
+      "entry_point": "separate_paren_groups",
+      "completion": "    [(()'], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [",
+      "raw_completion": "    [(()'], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [(()()')]\n    [(()')], [(()')], [",
+      "passed": false,
+      "grade_reason": "SyntaxError: unterminated string literal (detected at line 12) (<string>, line 12)"
+    },
+    {
+      "task_id": "HumanEval/2",
+      "entry_point": "truncate_number",
+      "completion": "    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n",
+      "raw_completion": "    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n    3.5\n    0.5\n",
+      "passed": false,
+      "grade_reason": "AssertionError: "
+    },
+    {
+      "task_id": "HumanEval/3",
+      "entry_point": "below_zero",
+      "completion": "    >>> below_zero([1, 2, 3, 4, 5])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7, 8])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7, 8, 9])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, ",
+      "raw_completion": "    >>> below_zero([1, 2, 3, 4, 5])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7, 8])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, 7, 8, 9])\n    True\n    >>> below_zero([1, 2, 3, 4, 5, 6, ",
+      "passed": false,
+      "grade_reason": "SyntaxError: invalid syntax (<string>, line 13)"
+    },
+    {
+      "task_id": "HumanEval/4",
+      "entry_point": "mean_absolute_deviation",
+      "completion": "    2.0\n    3.0\n    4.0\n    5.0\n    6.0\n    7.0\n    8.0\n    9.0\n    10.0\n    11.0\n    12.0\n    13.0\n    14.0\n    15.0\n    16.0\n    17.0\n    18.0\n    19.0\n    20.0\n    21.0\n    22.0\n    23.0\n    24.0\n    25.0\n    26.0\n    27.0\n    28.0\n    29.0\n    30.0\n    31.0\n    32.0\n    33.0\n",
+      "raw_completion": "    2.0\n    3.0\n    4.0\n    5.0\n    6.0\n    7.0\n    8.0\n    9.0\n    10.0\n    11.0\n    12.0\n    13.0\n    14.0\n    15.0\n    16.0\n    17.0\n    18.0\n    19.0\n    20.0\n    21.0\n    22.0\n    23.0\n    24.0\n    25.0\n    26.0\n    27.0\n    28.0\n    29.0\n    30.0\n    31.0\n    32.0\n    33.0\n",
+      "passed": false,
+      "grade_reason": "TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'"
+    },
+    {
+      "task_id": "HumanEval/5",
+      "entry_point": "intersperse",
+      "completion": "    [1, 2, 3, 4, 4]\n    [1, 2, 3, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3,",
+      "raw_completion": "    [1, 2, 3, 4, 4]\n    [1, 2, 3, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4]\n    [1, 2, 3,",
+      "passed": false,
+      "grade_reason": "SyntaxError: '[' was never closed (<string>, line 18)"
+    },
+    {
+      "task_id": "HumanEval/6",
+      "entry_point": "parse_nested_parens",
+      "completion": "    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1,",
+      "raw_completion": "    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1, 3]\n    [2, 3, 1,",
+      "passed": false,
+      "grade_reason": "SyntaxError: '[' was never closed (<string>, line 25)"
+    }
+  ]
+}

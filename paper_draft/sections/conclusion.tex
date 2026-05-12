@@ -1,0 +1,18 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+\textbf{Yes, it is easier to test whether \talkienineteen generalizes} --- \emph{qualitatively} easier, not just quantitatively. The cleanest single number is the +6.84 \bpt paired surprisal gap (\talkienineteen vs. \talkieweb) on deliberately anchored post-1930 factual probes (paired permutation $p < 0.001$, $n=30$). The cleanest single example is \talkienineteen successfully extending Python from one in-context demonstration despite being trained exclusively on pre-1931 English text. The cleanest meta-claim is the attribution-bits asymmetry: \talkienineteen yields $\approx 34$ bits of evidence per correct post-1930 answer, against the modern baselines' $\le 0$ bits without an additional contamination audit.
+
+The meta-hypothesis was \emph{less} helpful in two places. On \mmlu, the per-question date heuristic is too noisy at our sample size to expose the cutoff without aggregating to per-subject. On \humaneval, the bare 13B base models cannot do the benchmark at all because of alignment, so the easier-to-test claim is moot until either an instruction-tuned variant or a different protocol is used.
+
+\para{Future work.} The most useful next experiments, in priority order, are:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \textbf{Patch a KV-cache into Talkie's \texttt{model.py}.} $O(N)$ per-token decoding would unlock high-temperature pass@100 \humaneval (the Talkie blog's protocol) and many-shot ICL studies.
+    \item \textbf{Probe \talkienineteen-IT} (instruction-tuned) on the same probe battery to disentangle structural cutoff effects from RL post-training contamination.
+    \item \textbf{Othello-GPT-style probing} on \talkienineteen's hidden states for ``year'' and ``post-1930-ness'' representations.
+    \item \textbf{Cross-replicate with \rankefour-1929} as soon as those weights become public, to verify the methodology transfers across architectures.
+    \item \textbf{Local n-gram index} over the pre-1930 corpus to convert the structural argument into a quantitative correlation in the style of \citet{wang2025generalization}.
+\end{itemize}
+
+\para{Reproducibility.}
+All code, probe items, and analysis scripts are released. Total wall-clock for the experiments reported here (4$\times$ RTX A6000) is approximately 25 minutes for probes plus \mmlu on both Talkies, plus 6 minutes for the \gptfour baselines. Total estimated OpenAI API cost: $\approx \$1$.

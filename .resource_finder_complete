@@ -1,0 +1,24 @@
+Resource finding phase completed successfully.
+Timestamp: 2026-05-12T02:17:00+00:00
+Papers downloaded: 18 (8 load-bearing + 10 background)
+Datasets downloaded: 3 (HumanEval, MMLU, post1930_probes seed)
+Repositories cloned: 4 (talkie, lm-evaluation-harness, llm-corpus-search, history-llms/Ranke-4B)
+
+Key artifacts:
+- literature_review.md       — 21 KB, full review with experiment plan
+- resources.md               — 10 KB, resource catalog
+- papers/README.md           — paper-by-paper annotations
+- datasets/README.md         — load instructions + download notes for omitted large data
+- code/README.md             — per-repo notes incl. Talkie architecture, VRAM, integration
+
+Talkie context resolved:
+- Talkie-1930 is a real 13B model released April 2026 by Levine/Duvenaud/Radford.
+- Three HF checkpoints: talkie-1930-13b-base, talkie-1930-13b-it, talkie-web-13b-base.
+- Architecture: 40 layers, 40 heads, 5120 embd, vocab 65536 (decoder-only, RoPE/SwiGLU/RMSNorm).
+- Trained on 260B tokens of pre-1931 English text (Common Pile + Internet Archive + IDI).
+- Modern twin (talkie-web) is the matched baseline.
+
+Headline experiment recommendation:
+- Replicate-and-extend Talkie's HumanEval probe across {1930-base, 1930-it, web-base} with k ∈ {0,1,3,10} in-context Python demonstrations.
+- Date-stratify MMLU and report Talkie-1930 vs. Talkie-web gap separately on pre-/post-1930-decidable items.
+- Distributional-memorisation lower-bound analysis on Talkie's pretraining corpus (or use the "co-occurrence = 0 by construction" structural argument).

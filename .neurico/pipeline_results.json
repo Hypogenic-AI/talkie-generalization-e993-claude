@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/talkie-generalization-e993-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/talkie-generalization-e993-claude/literature_review.md",
+        "resources_catalog": "/workspaces/talkie-generalization-e993-claude/resources.md",
+        "papers_dir": "/workspaces/talkie-generalization-e993-claude/papers",
+        "datasets_dir": "/workspaces/talkie-generalization-e993-claude/datasets",
+        "code_dir": "/workspaces/talkie-generalization-e993-claude/code"
+      },
+      "log_file": "/workspaces/talkie-generalization-e993-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/talkie-generalization-e993-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 1505.903508901596
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 6310.774392604828,
+      "log_file": "/workspaces/talkie-generalization-e993-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/talkie-generalization-e993-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/talkie-generalization-e993-claude"
+}

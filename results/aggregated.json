@@ -1,0 +1,293 @@
+{
+  "humaneval": {
+    "talkie-1930 (k=3)": {
+      "n": 7,
+      "n_pass": 0,
+      "pass_at_1": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.3481636551311609
+    },
+    "talkie-web (k=3)": {
+      "n": 10,
+      "n_pass": 0,
+      "pass_at_1": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.2588655508930523
+    },
+    "gpt-4.1": {
+      "n": 164,
+      "n_pass": 149,
+      "pass_at_1": 0.9085365853658537,
+      "ci_lo": 0.8597560975609756,
+      "ci_hi": 0.9512195121951219
+    }
+  },
+  "probes": {
+    "talkie-1930": {
+      "post1930_completion": {
+        "n": 30,
+        "em": 1,
+        "em_rate": 0.03333333333333333,
+        "strict_em": 1,
+        "strict_em_rate": 0.03333333333333333,
+        "ci_lo": 0.0,
+        "ci_hi": 0.1
+      },
+      "pre1930_completion": {
+        "n": 9,
+        "em": 7,
+        "em_rate": 0.7777777777777778,
+        "strict_em": 7,
+        "strict_em_rate": 0.7777777777777778,
+        "ci_lo": 0.4444444444444444,
+        "ci_hi": 1.0
+      },
+      "icl": {
+        "n": 11,
+        "em": 4,
+        "em_rate": 0.36363636363636365,
+        "strict_em": 4,
+        "strict_em_rate": 0.36363636363636365,
+        "ci_lo": 0.09090909090909091,
+        "ci_hi": 0.6363636363636364
+      },
+      "bits_post1930_completion": {
+        "n": 30,
+        "mean_bits": 7.664068590646541,
+        "min_bits": 1.5664051426871968,
+        "max_bits": 15.378893643472177
+      },
+      "bits_pre1930_completion": {
+        "n": 9,
+        "mean_bits": 1.3585377511858157,
+        "min_bits": 0.13585855496233,
+        "max_bits": 5.274015499809967
+      },
+      "bits_icl": {
+        "n": 11,
+        "mean_bits": 1.6338984471885218,
+        "min_bits": 0.20691391809256557,
+        "max_bits": 3.755872701883395
+      }
+    },
+    "talkie-web": {
+      "post1930_completion": {
+        "n": 30,
+        "em": 22,
+        "em_rate": 0.7333333333333333,
+        "strict_em": 22,
+        "strict_em_rate": 0.7333333333333333,
+        "ci_lo": 0.5666666666666667,
+        "ci_hi": 0.8666666666666667
+      },
+      "pre1930_completion": {
+        "n": 9,
+        "em": 8,
+        "em_rate": 0.8888888888888888,
+        "strict_em": 8,
+        "strict_em_rate": 0.8888888888888888,
+        "ci_lo": 0.6666666666666666,
+        "ci_hi": 1.0
+      },
+      "icl": {
+        "n": 11,
+        "em": 7,
+        "em_rate": 0.6363636363636364,
+        "strict_em": 7,
+        "strict_em_rate": 0.6363636363636364,
+        "ci_lo": 0.36363636363636365,
+        "ci_hi": 0.9090909090909091
+      },
+      "bits_post1930_completion": {
+        "n": 30,
+        "mean_bits": 0.8203306467265186,
+        "min_bits": 0.039346581408329695,
+        "max_bits": 4.637452674518436
+      },
+      "bits_pre1930_completion": {
+        "n": 9,
+        "mean_bits": 0.4571690626061311,
+        "min_bits": 0.04610165864136881,
+        "max_bits": 1.627371501901755
+      },
+      "bits_icl": {
+        "n": 11,
+        "mean_bits": 0.4801777294843781,
+        "min_bits": 0.0705041945639392,
+        "max_bits": 1.0802052298649367
+      }
+    },
+    "gpt-4.1": {
+      "post1930_completion": {
+        "n": 30,
+        "em": 24,
+        "em_rate": 0.8,
+        "strict_em": 23,
+        "strict_em_rate": 0.7666666666666667,
+        "ci_lo": 0.6666666666666666,
+        "ci_hi": 0.9333333333333333
+      },
+      "pre1930_completion": {
+        "n": 9,
+        "em": 8,
+        "em_rate": 0.8888888888888888,
+        "strict_em": 8,
+        "strict_em_rate": 0.8888888888888888,
+        "ci_lo": 0.6666666666666666,
+        "ci_hi": 1.0
+      },
+      "icl": {
+        "n": 11,
+        "em": 11,
+        "em_rate": 1.0,
+        "strict_em": 11,
+        "strict_em_rate": 1.0,
+        "ci_lo": 0.7615958096191473,
+        "ci_hi": 1.0
+      },
+      "bits_post1930_completion": {
+        "n": 0
+      },
+      "bits_pre1930_completion": {
+        "n": 0
+      },
+      "bits_icl": {
+        "n": 0
+      }
+    }
+  },
+  "mmlu": {
+    "talkie-1930": {
+      "overall": {
+        "n": 456,
+        "n_correct": 98,
+        "acc": 0.2149122807017544,
+        "ci_lo": 0.17982456140350878,
+        "ci_hi": 0.25219298245614036
+      },
+      "post1930": {
+        "n": 40,
+        "n_correct": 11,
+        "acc": 0.275,
+        "ci_lo": 0.15,
+        "ci_hi": 0.425
+      },
+      "pre1930": {
+        "n": 12,
+        "n_correct": 2,
+        "acc": 0.16666666666666666,
+        "ci_lo": 0.0,
+        "ci_hi": 0.4166666666666667
+      },
+      "unknown": {
+        "n": 404,
+        "n_correct": 85,
+        "acc": 0.2103960396039604,
+        "ci_lo": 0.1707920792079208,
+        "ci_hi": 0.2524752475247525
+      }
+    },
+    "talkie-web": {
+      "overall": {
+        "n": 456,
+        "n_correct": 160,
+        "acc": 0.3508771929824561,
+        "ci_lo": 0.3092105263157895,
+        "ci_hi": 0.39473684210526316
+      },
+      "post1930": {
+        "n": 40,
+        "n_correct": 15,
+        "acc": 0.375,
+        "ci_lo": 0.225,
+        "ci_hi": 0.525
+      },
+      "pre1930": {
+        "n": 12,
+        "n_correct": 3,
+        "acc": 0.25,
+        "ci_lo": 0.0,
+        "ci_hi": 0.5
+      },
+      "unknown": {
+        "n": 404,
+        "n_correct": 142,
+        "acc": 0.35148514851485146,
+        "ci_lo": 0.30445544554455445,
+        "ci_hi": 0.400990099009901
+      }
+    },
+    "gpt-4.1": {
+      "overall": {
+        "n": 456,
+        "n_correct": 388,
+        "acc": 0.8508771929824561,
+        "ci_lo": 0.8179824561403509,
+        "ci_hi": 0.8837719298245614
+      },
+      "post1930": {
+        "n": 40,
+        "n_correct": 37,
+        "acc": 0.925,
+        "ci_lo": 0.825,
+        "ci_hi": 1.0
+      },
+      "pre1930": {
+        "n": 12,
+        "n_correct": 8,
+        "acc": 0.6666666666666666,
+        "ci_lo": 0.4166666666666667,
+        "ci_hi": 0.9166666666666666
+      },
+      "unknown": {
+        "n": 404,
+        "n_correct": 343,
+        "acc": 0.849009900990099,
+        "ci_lo": 0.8143564356435643,
+        "ci_hi": 0.8836633663366337
+      }
+    }
+  },
+  "attribution_bits_humaneval": {
+    "talkie-1930 (k=3)": {
+      "pass_at_1": 0.0,
+      "p_memo_assumed": 1e-12,
+      "bits_for_generalization": -1.0
+    },
+    "talkie-web (k=3)": {
+      "pass_at_1": 0.0,
+      "p_memo_assumed": 1.0,
+      "bits_for_generalization": -40.86313713864835
+    },
+    "gpt-4.1": {
+      "pass_at_1": 0.9085365853658537,
+      "p_memo_assumed": 1.0,
+      "bits_for_generalization": -1.1383834841559222
+    }
+  },
+  "attribution_bits_probes_post1930": {
+    "talkie-1930": {
+      "em_rate": 0.03333333333333333,
+      "p_memo_assumed": 1e-12,
+      "bits_for_generalization": 33.95624654303983
+    },
+    "talkie-web": {
+      "em_rate": 0.7333333333333333,
+      "p_memo_assumed": 1.0,
+      "bits_for_generalization": -1.4474589769712214
+    },
+    "gpt-4.1": {
+      "em_rate": 0.8,
+      "p_memo_assumed": 1.0,
+      "bits_for_generalization": -1.3219280948873622
+    }
+  },
+  "tests": {
+    "probes_post1930_bits_perm_p": 0.0001999600079984003,
+    "probes_post1930_n_paired": 30,
+    "probes_post1930_mean_diff_bits_old_minus_new": 6.843737943920022,
+    "probes_icl_bits_perm_p": 0.021995600879824034,
+    "probes_icl_n_paired": 11,
+    "probes_icl_mean_diff_bits_old_minus_new": 1.1537207177041438
+  }
+}

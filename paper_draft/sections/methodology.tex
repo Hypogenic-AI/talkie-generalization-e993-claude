@@ -1,0 +1,58 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Models}
+\label{sec:method:models}
+
+We compare three models, summarized in \tabref{tab:models}. \talkienineteen and \talkieweb are matched-architecture, matched-FLOPs 13B decoder-only transformers (40 layers, 40 heads, embedding dimension 5120, vocabulary size 65{,}536, RoPE, SwiGLU, RMSNorm) released by \citet{talkielm2026}. The only intended difference is the pretraining corpus: pre-1931 English text (260B tokens, Common Pile + IDI + Internet Archive) for \talkienineteen, and modern FineWeb for \talkieweb. We load each in bf16 on a single NVIDIA RTX A6000 (48~GB VRAM) and decode greedily; we bypass the upstream sampler that injects Gumbel noise even at temperature zero. \gptfour is queried via the OpenAI API at \texttt{temperature=0}.
+
+\begin{table}[h]
+    \centering
+    \caption{Models compared. Both Talkie checkpoints share architecture and compute; only the pretraining corpus differs.}
+    \label{tab:models}
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Model} & \textbf{Size} & \textbf{Cutoff} & \textbf{Corpus} & \textbf{Access} \\
+        \midrule
+        \talkienineteen & 13B & 1930 & 260B tokens pre-1931 English & HF weights \\
+        \talkieweb & 13B & modern & FineWeb (matched arch + FLOPs) & HF weights \\
+        \gptfour & --- & unknown & unknown & OpenAI API \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Datasets}
+\label{sec:method:datasets}
+
+\para{Post-1930 probe battery.} We construct 50 items: 30 post-1930 factual completions (\eg ``On August 6, 1945, the United States dropped\dots''), 9 pre-1930 controls (\eg ``The American Civil War began in the year\dots''), and 11 in-context-learning items in Python and JavaScript (each prompt contains one to three worked examples followed by a continuation cue). All items are written by hand or constructed by a small script and verified manually. The probe battery is released as part of our reproduction pipeline.
+
+\para{Date-stratified \mmlu.} We subsample 456 \mmlu items, 8 per subject across all 57 subjects, with a fixed seed. Each item is auto-tagged \texttt{post1930}, \texttt{pre1930}, or \texttt{unknown} by a conservative regex+keyword detector applied to the question text only (not answer choices, to avoid numeric-choice false positives). Year tokens use a 4-digit pattern with negative look-around to skip decimals; a hand-curated keyword whitelist captures unambiguously post-1930 vocabulary (\texttt{internet}, \texttt{wifi}, \texttt{CRISPR}, \texttt{polio vaccine}, \dots), with an upper-case-only acronym list (\texttt{DNA}, \texttt{NATO}, \dots) to avoid matching lowercase homonyms. On the full \mmlu test set, the heuristic tags 12.7\% post-1930, 2.6\% pre-1930, and 84.7\% unknown.
+
+\para{\humaneval.} 164 Python function-completion problems with hidden unit tests~\citep{chen2021humaneval}. We evaluate pass@1 with $k \in \{0, 3\}$ in-context demonstrations.
+
+\subsection{Scoring}
+\label{sec:method:scoring}
+
+\para{Probes.} For each probe we compute (i) the per-token bits-per-token of the expected modern continuation in one forward pass over (prompt + target), and (ii) the greedy-decoded continuation (max 32 tokens, stop on newline). The default \texttt{TalkieModel.forward} returns only the last-position logits; we wrote \texttt{\_forward\_all\_logits} to recover all-position logits in a single pass. For \gptfour we use the Chat Completions API and check for the expected modern token under a \emph{lenient} exact-match rule (case-fold, punctuation-strip, substring).
+
+\para{\mmlu.} For Talkie models, we score the four single-token candidates $\{$``\,A''$, $``\,B''$, $``\,C''$, $``\,D''$\}$ from the next-token distribution at the end of a standard ``Question / A / B / C / D / Answer:'' prompt (one forward pass per item). For \gptfour we prompt for a letter and parse it.
+
+\para{\humaneval.} Greedy decoding with \texttt{max\_tokens=192}, stop-strings \{\texttt{$\backslash$ndef}, \texttt{$\backslash$nclass}, \texttt{$\backslash$nif \_\_name\_\_}, \texttt{$\backslash$nimport}, \texttt{$\backslash$nfrom}, \texttt{$\backslash$n\#}, \texttt{$\backslash$n$\backslash$n$\backslash$n}\}, plus a special prefix-stop rule to handle the case where the bare base model immediately emits \texttt{def foo():} (re-defining the prompt's function instead of writing its body --- observed empirically). Generated code is evaluated by the official \texttt{check(candidate)} function in a sandboxed subprocess.
+
+\subsection{Statistical Tests}
+\label{sec:method:stats}
+
+For every proportion estimate (pass@1, EM, accuracy) we report 95\% bootstrap confidence intervals (2{,}000 resamples). For paired per-item \bpt comparisons between \talkienineteen and \talkieweb we use a paired permutation test (5{,}000 sign-flip permutations, two-sided). All tests use seed 0.
+
+\subsection{Attribution-Bits Framework}
+\label{sec:method:bits}
+
+The load-bearing definitional move of the meta-experiment is to convert the structural cutoff argument into a quantitative attribution score. For a single correctly answered probe item, the Bayes factor in favor of ``the model generalized'' over ``the model memorized'' is
+\begin{equation}
+\mathrm{BF}_{\text{gen}} \;=\; \frac{P(\text{correct} \mid \text{gen}) \cdot P(\text{gen})}{P(\text{correct} \mid \text{memo}) \cdot P(\text{memo})}.
+\label{eq:bf}
+\end{equation}
+We set $P(\text{correct} \mid \text{memo}) = 1$ (a perfect memorizer trivially recovers anything in its training data), $P(\text{correct} \mid \text{gen}) \approx p_{\text{correct}}$ (the model's empirical accuracy on the probe family), and equal priors $P(\text{gen}) = P(\text{memo})$. The remaining free parameter is the prior probability $P(\text{memo})$ that the item is in training.
+
+\para{Why \talkienineteen's structural cutoff is load-bearing.}
+For \talkienineteen on a post-1930 item, $P(\text{memo}) \approx 0$ by construction. We cap at $P(\text{memo}) = 10^{-12}$ for finite arithmetic, yielding $\log_2 \mathrm{BF}_{\text{gen}} \approx 34$ bits of evidence per correct answer. For \talkieweb and \gptfour on the same item, the training corpus is unknown and we must use $P(\text{memo}) = 1$ as the worst-case value: bits become $\le 0$, i.e., the observation provides no evidence against memorization. The asymmetry between the two arms is the meta-experimental claim: \talkienineteen trades a hard structural assumption for the freedom to compute the bits at all. Modern-LLM setups must spend additional resources --- n-gram indices, contamination audits --- to lower $P(\text{memo})$ before they can produce a non-trivial number.

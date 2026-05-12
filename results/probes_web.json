@@ -1,0 +1,909 @@
+{
+  "summary": {
+    "model": "web",
+    "n_probes": 50,
+    "wall_seconds": 62.299662351608276
+  },
+  "records": [
+    {
+      "id": "invention-1",
+      "year": 1938,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "ballpoint pen",
+      "prompt": "A ballpoint pen is a writing instrument that",
+      "expected_modern": "uses a small rotating ball at its tip to dispense ink",
+      "scored_target": " uses a small rotating ball at its tip to dispense ink",
+      "score": {
+        "sum_logp": -24.776704788208008,
+        "n_tokens": 11,
+        "mean_logp": -2.2524277080189097,
+        "bits_per_token": 3.249566284319775
+      },
+      "greedy_gen": " uses a ballpoint to write. The ballpoint pen was invented in 1888 by Lewis Waterman. The ballpoint pen is a popular writing instrument because",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "invention-2",
+      "year": 1969,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "Internet (ARPANET)",
+      "prompt": "The Internet is a global network of computers that",
+      "expected_modern": "exchange information using the TCP/IP protocol suite",
+      "scored_target": " exchange information using the TCP/IP protocol suite",
+      "score": {
+        "sum_logp": -11.028606414794922,
+        "n_tokens": 8,
+        "mean_logp": -1.3785758018493652,
+        "bits_per_token": 1.9888644728176055
+      },
+      "greedy_gen": " allows people to communicate and share information. It is a vast and complex system that has become an integral part of our lives. The Internet has revolutionized the way we",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "invention-3",
+      "year": 1945,
+      "category": "event",
+      "kind": "completion",
+      "concept": "atomic bomb (Hiroshima)",
+      "prompt": "On August 6, 1945, the United States dropped",
+      "expected_modern": "an atomic bomb on Hiroshima, Japan",
+      "scored_target": " an atomic bomb on Hiroshima, Japan",
+      "score": {
+        "sum_logp": -2.369469404220581,
+        "n_tokens": 7,
+        "mean_logp": -0.3384956291743687,
+        "bits_per_token": 0.4883459655724513
+      },
+      "greedy_gen": " an atomic bomb on Hiroshima, Japan. Three days later, the United States dropped another atomic bomb on Nagasaki, Japan. The bombings of Hiroshima and Nagasaki",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "invention-4",
+      "year": 1953,
+      "category": "discovery",
+      "kind": "completion",
+      "concept": "DNA double helix",
+      "prompt": "Watson and Crick are best known for discovering",
+      "expected_modern": "the double helical structure of DNA",
+      "scored_target": " the double helical structure of DNA",
+      "score": {
+        "sum_logp": -3.930537462234497,
+        "n_tokens": 7,
+        "mean_logp": -0.5615053517477853,
+        "bits_per_token": 0.8100809863991429
+      },
+      "greedy_gen": " the structure of DNA, the molecule that carries the genetic instructions used in the growth, development and functioning of all known living organisms. The discovery of the double he",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "invention-5",
+      "year": 1955,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "polio vaccine",
+      "prompt": "The polio vaccine, developed by Jonas Salk, was first widely used in",
+      "expected_modern": "1955",
+      "scored_target": " 1955",
+      "score": {
+        "sum_logp": -0.658644437789917,
+        "n_tokens": 3,
+        "mean_logp": -0.21954814592997232,
+        "bits_per_token": 0.3167410213695376
+      },
+      "greedy_gen": " 1955. The vaccine was administered to 1.8 million children in the United States. The vaccine was administered to 1.8 million children in",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "invention-6",
+      "year": 1991,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "World Wide Web",
+      "prompt": "The World Wide Web was invented by Tim Berners-Lee at",
+      "expected_modern": "CERN",
+      "scored_target": " CERN",
+      "score": {
+        "sum_logp": -0.15734219551086426,
+        "n_tokens": 2,
+        "mean_logp": -0.07867109775543213,
+        "bits_per_token": 0.1134984025930528
+      },
+      "greedy_gen": " CERN in 1989. The first web server was installed at CERN in 1991. The first web browser was created by Marc Andreessen and",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "icl-python-1",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python language",
+      "prompt": "# Python code\ndef double(x):\n    return x * 2\n\nprint(double(5))\n# Output: 10\n\n# Now write a function that triples its input:\ndef triple(x):\n    return",
+      "expected_modern": "x * 3",
+      "scored_target": " x * 3",
+      "score": {
+        "sum_logp": -0.24277038872241974,
+        "n_tokens": 4,
+        "mean_logp": -0.060692597180604935,
+        "bits_per_token": 0.08756090897113022
+      },
+      "greedy_gen": " x * 3",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "icl-python-2",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python list comprehension",
+      "prompt": "squares = [x**2 for x in range(5)]\n# squares is [0, 1, 4, 9, 16]\n\ncubes = [x**3 for x in range(5)]\n# cubes is",
+      "expected_modern": "[0, 1, 8, 27, 64]",
+      "scored_target": " [0, 1, 8, 27, 64]",
+      "score": {
+        "sum_logp": -9.52305793762207,
+        "n_tokens": 15,
+        "mean_logp": -0.6348705291748047,
+        "bits_per_token": 0.9159245640470427
+      },
+      "greedy_gen": " [0, 1, 9, 27, 81]",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "event-1",
+      "year": 1969,
+      "category": "event",
+      "kind": "completion",
+      "concept": "moon landing",
+      "prompt": "In July 1969, the first humans to walk on the Moon were",
+      "expected_modern": "Neil Armstrong and Buzz Aldrin",
+      "scored_target": " Neil Armstrong and Buzz Aldrin",
+      "score": {
+        "sum_logp": -2.9772887229919434,
+        "n_tokens": 6,
+        "mean_logp": -0.4962147871653239,
+        "bits_per_token": 0.7158866126591853
+      },
+      "greedy_gen": " the Apollo 11 astronauts Neil Armstrong, Buzz Aldrin and Michael Collins. The mission was launched from the Kennedy Space Center in Florida on July 16, ",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "event-2",
+      "year": 1989,
+      "category": "event",
+      "kind": "completion",
+      "concept": "fall of Berlin Wall",
+      "prompt": "The Berlin Wall fell in the year",
+      "expected_modern": "1989",
+      "scored_target": " 1989",
+      "score": {
+        "sum_logp": -0.7974959015846252,
+        "n_tokens": 3,
+        "mean_logp": -0.26583196719487506,
+        "bits_per_token": 0.3835144607818039
+      },
+      "greedy_gen": " 1989. The Berlin Wall was a wall that separated East Berlin from West Berlin. The Berlin Wall was built in 1961. The Berlin Wall was",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "concept-1",
+      "year": 1948,
+      "category": "scientific-concept",
+      "kind": "completion",
+      "concept": "information theory bit",
+      "prompt": "Claude Shannon introduced the bit as the fundamental unit of",
+      "expected_modern": "information",
+      "scored_target": " information",
+      "score": {
+        "sum_logp": -0.16555429995059967,
+        "n_tokens": 1,
+        "mean_logp": -0.16555429995059967,
+        "bits_per_token": 0.23884436753657412
+      },
+      "greedy_gen": " information in 1948. The bit is a binary digit, a 0 or 1, and is the smallest unit of information that can be stored or",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "concept-2",
+      "year": 1953,
+      "category": "scientific-concept",
+      "kind": "completion",
+      "concept": "REM sleep",
+      "prompt": "REM sleep, characterized by rapid eye movements, is the stage of sleep most associated with",
+      "expected_modern": "dreaming",
+      "scored_target": " dreaming",
+      "score": {
+        "sum_logp": -0.32239383459091187,
+        "n_tokens": 1,
+        "mean_logp": -0.32239383459091187,
+        "bits_per_token": 0.4651159863774853
+      },
+      "greedy_gen": " dreaming. REM sleep is the stage of sleep most associated with dreaming. REM sleep is the stage of sleep most associated with dreaming. REM sleep is the stage of",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "neologism-1",
+      "year": 1950,
+      "category": "neologism",
+      "kind": "completion",
+      "concept": "Turing Test",
+      "prompt": "Alan Turing proposed a test of machine intelligence that became known as the",
+      "expected_modern": "Turing Test",
+      "scored_target": " Turing Test",
+      "score": {
+        "sum_logp": -1.2171114683151245,
+        "n_tokens": 2,
+        "mean_logp": -0.6085557341575623,
+        "bits_per_token": 0.8779603397736575
+      },
+      "greedy_gen": " Turing Test. The test is a simple one: a human judge engages in a conversation with two persons, one of whom is a human and the other of whom",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "neologism-2",
+      "year": 1980,
+      "category": "neologism",
+      "kind": "completion",
+      "concept": "smartphone",
+      "prompt": "A handheld device that combines telephony, web browsing, and applications is called a",
+      "expected_modern": "smartphone",
+      "scored_target": " smartphone",
+      "score": {
+        "sum_logp": -0.5408134460449219,
+        "n_tokens": 1,
+        "mean_logp": -0.5408134460449219,
+        "bits_per_token": 0.7802288766550798
+      },
+      "greedy_gen": " smartphone. The smartphone is a mobile phone that has a touchscreen and a QWERTY keyboard. It is a mobile phone that can be used to make calls,",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "physics-1",
+      "year": 1964,
+      "category": "physics",
+      "kind": "completion",
+      "concept": "quark",
+      "prompt": "Murray Gell-Mann named the elementary particles that make up protons and neutrons",
+      "expected_modern": "quarks",
+      "scored_target": " quarks",
+      "score": {
+        "sum_logp": -2.0138916969299316,
+        "n_tokens": 2,
+        "mean_logp": -1.0069458484649658,
+        "bits_per_token": 1.4527157820241359
+      },
+      "greedy_gen": ", and the force that binds them together, the strong force. He also discovered the quark, a subatomic particle that makes up protons and neut",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "physics-2",
+      "year": 2012,
+      "category": "physics",
+      "kind": "completion",
+      "concept": "Higgs boson",
+      "prompt": "The Higgs boson, a fundamental particle that gives mass to other particles, was experimentally confirmed at",
+      "expected_modern": "CERN",
+      "scored_target": " CERN",
+      "score": {
+        "sum_logp": -0.4791843295097351,
+        "n_tokens": 2,
+        "mean_logp": -0.23959216475486755,
+        "bits_per_token": 0.3456584279276989
+      },
+      "greedy_gen": " CERN in 2012. The discovery was a major milestone in the history of physics, and it was made possible by the LHC\u2019s unprecedented energy and",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "math-1",
+      "year": 1976,
+      "category": "mathematics",
+      "kind": "completion",
+      "concept": "Four Color Theorem (proved with computers)",
+      "prompt": "The Four Color Theorem was first proved with significant assistance from computers in",
+      "expected_modern": "1976",
+      "scored_target": " 1976",
+      "score": {
+        "sum_logp": -1.5985537767410278,
+        "n_tokens": 3,
+        "mean_logp": -0.5328512589136759,
+        "bits_per_token": 0.7687418687662014
+      },
+      "greedy_gen": " 1976 by computer scientist Richard Karp and mathematician Robert Sedgewick. The theorem was first proved in 1974 by computer scientist Richard Karp and",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "math-2",
+      "year": 1995,
+      "category": "mathematics",
+      "kind": "completion",
+      "concept": "Fermat's Last Theorem proof",
+      "prompt": "Fermat's Last Theorem was proved by Andrew Wiles in",
+      "expected_modern": "1995",
+      "scored_target": " 1995",
+      "score": {
+        "sum_logp": -1.2602874040603638,
+        "n_tokens": 3,
+        "mean_logp": -0.4200958013534546,
+        "bits_per_token": 0.6060701293109041
+      },
+      "greedy_gen": " 1994. The proof was published in 1995 in the journal Science. The proof was published in 1995 in the journal Science. The proof",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "icl-language-1",
+      "year": 1995,
+      "category": "icl-language",
+      "kind": "icl",
+      "concept": "JavaScript",
+      "prompt": "// JavaScript code\nlet x = 10;\nlet y = 5;\nconsole.log(x + y);\n// Output: 15\n\nlet a = 7;\nlet b = 3;\nconsole.log(a * b);\n// Output:",
+      "expected_modern": "21",
+      "scored_target": " 21",
+      "score": {
+        "sum_logp": -0.14768320322036743,
+        "n_tokens": 2,
+        "mean_logp": -0.07384160161018372,
+        "bits_per_token": 0.10653091245431054
+      },
+      "greedy_gen": " 21",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "icl-relativity",
+      "year": 1915,
+      "category": "icl-physics-edge-case",
+      "kind": "completion",
+      "concept": "general relativity",
+      "prompt": "In Einstein's theory of general relativity, the curvature of spacetime is caused by",
+      "expected_modern": "mass and energy",
+      "scored_target": " mass and energy",
+      "score": {
+        "sum_logp": -3.384023904800415,
+        "n_tokens": 3,
+        "mean_logp": -1.128007968266805,
+        "bits_per_token": 1.627371501901755
+      },
+      "greedy_gen": " the presence of matter and energy. The curvature of spacetime is a consequence of the fact that the metric tensor is not a symmetric tensor. The metric",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-fact-1",
+      "year": 1957,
+      "category": "event",
+      "kind": "completion",
+      "concept": "Sputnik launch",
+      "prompt": "On October 4, 1957, the Soviet Union launched the first artificial satellite, named",
+      "expected_modern": "Sputnik 1",
+      "scored_target": " Sputnik 1",
+      "score": {
+        "sum_logp": -0.9189815521240234,
+        "n_tokens": 5,
+        "mean_logp": -0.18379631042480468,
+        "bits_per_token": 0.26516202558355423
+      },
+      "greedy_gen": " Sputnik 1. The launch of Sputnik 1 was a major event in the Cold War, and it was seen as a major victory for",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-2",
+      "year": 1969,
+      "category": "event",
+      "kind": "completion",
+      "concept": "Apollo 11 landing date",
+      "prompt": "Apollo 11 landed on the Moon on July",
+      "expected_modern": "20, 1969",
+      "scored_target": " 20, 1969",
+      "score": {
+        "sum_logp": -0.4262300133705139,
+        "n_tokens": 6,
+        "mean_logp": -0.07103833556175232,
+        "bits_per_token": 0.10248665442794617
+      },
+      "greedy_gen": " 20, 1969. The first humans to set foot on another world, Neil Armstrong and Buzz Aldrin, spent 21 hours and 36 minutes",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-3",
+      "year": 1977,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "personal computer",
+      "prompt": "The Apple II personal computer was released in",
+      "expected_modern": "1977",
+      "scored_target": " 1977",
+      "score": {
+        "sum_logp": -0.3435097932815552,
+        "n_tokens": 3,
+        "mean_logp": -0.11450326442718506,
+        "bits_per_token": 0.16519329175469755
+      },
+      "greedy_gen": " 1977, and the first Apple Macintosh was released in 1984. The first Apple iPhone was released in 2007, and the first Apple",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-4",
+      "year": 1981,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "MS-DOS operating system",
+      "prompt": "The IBM Personal Computer, released in 1981, shipped with an operating system called",
+      "expected_modern": "MS-DOS",
+      "scored_target": " MS-DOS",
+      "score": {
+        "sum_logp": -1.3772772550582886,
+        "n_tokens": 3,
+        "mean_logp": -0.4590924183527629,
+        "bits_per_token": 0.6623303552672524
+      },
+      "greedy_gen": " MS-DOS, which was developed by Microsoft. The IBM PC was the first personal computer to be widely adopted, and it helped to popularize the use of",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-5",
+      "year": 1986,
+      "category": "event",
+      "kind": "completion",
+      "concept": "Chernobyl disaster",
+      "prompt": "The Chernobyl nuclear disaster occurred in",
+      "expected_modern": "1986",
+      "scored_target": " 1986",
+      "score": {
+        "sum_logp": -1.459654688835144,
+        "n_tokens": 3,
+        "mean_logp": -0.48655156294504803,
+        "bits_per_token": 0.7019455269975952
+      },
+      "greedy_gen": " the Soviet Union in 1986. The explosion at the Chernobyl nuclear power plant in Ukraine released radioactive material into the atmosphere, contaminating the surrounding area",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-6",
+      "year": 2007,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "iPhone",
+      "prompt": "Apple released the first iPhone in the year",
+      "expected_modern": "2007",
+      "scored_target": " 2007",
+      "score": {
+        "sum_logp": -0.09504498541355133,
+        "n_tokens": 3,
+        "mean_logp": -0.03168166180451711,
+        "bits_per_token": 0.045706976372498126
+      },
+      "greedy_gen": " 2007. The iPhone was a revolutionary device that changed the way people used their phones. It was the first phone to have a touch screen and it",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-7",
+      "year": 1996,
+      "category": "discovery",
+      "kind": "completion",
+      "concept": "cloned sheep",
+      "prompt": "Dolly the cloned sheep was born in",
+      "expected_modern": "1996",
+      "scored_target": " 1996",
+      "score": {
+        "sum_logp": -0.5982083082199097,
+        "n_tokens": 3,
+        "mean_logp": -0.19940276940663657,
+        "bits_per_token": 0.2876773865624801
+      },
+      "greedy_gen": " 1996. She was the first mammal to be cloned from an adult cell. Dolly was cloned from a mammary cell taken from an adult sheep. The",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-8",
+      "year": 2001,
+      "category": "event",
+      "kind": "completion",
+      "concept": "September 11 attacks",
+      "prompt": "The World Trade Center towers in New York were destroyed in attacks on September",
+      "expected_modern": "11, 2001",
+      "scored_target": " 11, 2001",
+      "score": {
+        "sum_logp": -0.16363783180713654,
+        "n_tokens": 6,
+        "mean_logp": -0.02727297196785609,
+        "bits_per_token": 0.039346581408329695
+      },
+      "greedy_gen": " 11, 2001. The attacks killed 2,996 people, including 343 firefighters and 72 police officers. The attacks were carried out by",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-9",
+      "year": 1957,
+      "category": "scientific-concept",
+      "kind": "completion",
+      "concept": "DNA replication (Meselson-Stahl)",
+      "prompt": "The Meselson-Stahl experiment demonstrated that DNA replication is",
+      "expected_modern": "semiconservative",
+      "scored_target": " semiconservative",
+      "score": {
+        "sum_logp": -1.910831093788147,
+        "n_tokens": 3,
+        "mean_logp": -0.6369436979293823,
+        "bits_per_token": 0.9189155143281978
+      },
+      "greedy_gen": " semi-conservative. This means that the daughter DNA molecule is a copy of the parent DNA molecule, but it is not an exact copy. The Meselson-St",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-fact-10",
+      "year": 1990,
+      "category": "scientific-concept",
+      "kind": "completion",
+      "concept": "Hubble Space Telescope",
+      "prompt": "The Hubble Space Telescope was launched into orbit in",
+      "expected_modern": "1990",
+      "scored_target": " 1990",
+      "score": {
+        "sum_logp": -0.4651404321193695,
+        "n_tokens": 3,
+        "mean_logp": -0.1550468107064565,
+        "bits_per_token": 0.22368526491185464
+      },
+      "greedy_gen": " 1990. It was the first telescope in space with the ability to capture images of the universe in unprecedented detail.",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-11",
+      "year": 1989,
+      "category": "neologism",
+      "kind": "completion",
+      "concept": "World Wide Web (proposal)",
+      "prompt": "The protocol that became the World Wide Web is built on top of an application-layer protocol called",
+      "expected_modern": "HTTP",
+      "scored_target": " HTTP",
+      "score": {
+        "sum_logp": -3.214437246322632,
+        "n_tokens": 1,
+        "mean_logp": -3.214437246322632,
+        "bits_per_token": 4.637452674518436
+      },
+      "greedy_gen": " TCP/IP. TCP/IP is a protocol suite that provides a reliable, connection-oriented, and packet-based transport service. The TCP/IP protocol suite is the foundation of",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-fact-12",
+      "year": 1971,
+      "category": "invention",
+      "kind": "completion",
+      "concept": "email",
+      "prompt": "The character used to separate a username from a domain in email addresses is the",
+      "expected_modern": "@ symbol",
+      "scored_target": " @ symbol",
+      "score": {
+        "sum_logp": -1.854344367980957,
+        "n_tokens": 2,
+        "mean_logp": -0.9271721839904785,
+        "bits_per_token": 1.337626711893253
+      },
+      "greedy_gen": " @ symbol. The @ symbol is also used to separate a username from a domain in a URL. The @ symbol is also used to separate a username from a",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-fact-13",
+      "year": 2003,
+      "category": "discovery",
+      "kind": "completion",
+      "concept": "Human Genome Project",
+      "prompt": "The Human Genome Project announced the essentially complete human genome sequence in the year",
+      "expected_modern": "2003",
+      "scored_target": " 2003",
+      "score": {
+        "sum_logp": -3.1532349586486816,
+        "n_tokens": 3,
+        "mean_logp": -1.0510783195495605,
+        "bits_per_token": 1.5163854792000564
+      },
+      "greedy_gen": " 2000. The project was a collaborative effort between the U.S. Department of Energy and the National Institutes of Health. The project was completed in 200",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-fact-14",
+      "year": 2020,
+      "category": "event",
+      "kind": "completion",
+      "concept": "COVID-19 pandemic",
+      "prompt": "The World Health Organization declared COVID-19 a pandemic in March of",
+      "expected_modern": "2020",
+      "scored_target": " 2020",
+      "score": {
+        "sum_logp": -0.21661745011806488,
+        "n_tokens": 3,
+        "mean_logp": -0.07220581670602162,
+        "bits_per_token": 0.10417097368511488
+      },
+      "greedy_gen": " 2020. The virus has since spread to every country in the world, infecting more than 200 million people and killing more than 4 million.",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-py-1",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python lists",
+      "prompt": "# Python\nnums = [4, 1, 7, 2]\nnums.sort()\nprint(nums)\n# Output: [1, 2, 4, 7]\n\nletters = ['c', 'a', 'b']\nletters.sort()\nprint(letters)\n# Output:",
+      "expected_modern": "['a', 'b', 'c']",
+      "scored_target": " ['a', 'b', 'c']",
+      "score": {
+        "sum_logp": -5.349066257476807,
+        "n_tokens": 11,
+        "mean_logp": -0.4862787506797097,
+        "bits_per_token": 0.7015519420952978
+      },
+      "greedy_gen": " ['b', 'c', 'a']",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-icl-py-2",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python conditional",
+      "prompt": "# Python\nx = 7\nif x > 5:\n    print('big')\nelse:\n    print('small')\n# Output: big\n\nx = 3\nif x > 5:\n    print('big')\nelse:\n    print('small')\n# Output:",
+      "expected_modern": "small",
+      "scored_target": " small",
+      "score": {
+        "sum_logp": -0.19532644748687744,
+        "n_tokens": 1,
+        "mean_logp": -0.19532644748687744,
+        "bits_per_token": 0.28179649714377664
+      },
+      "greedy_gen": " small",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-py-3",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python string concatenation",
+      "prompt": "# Python\na = 'foo'\nb = 'bar'\nprint(a + b)\n# Output: foobar\n\nx = 'hello'\ny = 'world'\nprint(x + y)\n# Output:",
+      "expected_modern": "helloworld",
+      "scored_target": " helloworld",
+      "score": {
+        "sum_logp": -1.3807421922683716,
+        "n_tokens": 3,
+        "mean_logp": -0.4602473974227905,
+        "bits_per_token": 0.6639966378439118
+      },
+      "greedy_gen": " hello world",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "extra-icl-py-4",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python while loop",
+      "prompt": "# Python\nn = 0\nwhile n < 3:\n    print(n)\n    n = n + 1\n# Output:\n# 0\n# 1\n# 2\n\nn = 0\nwhile n < 2:\n    print(n)\n    n = n + 1\n# Output:\n#",
+      "expected_modern": "0",
+      "scored_target": " 0",
+      "score": {
+        "sum_logp": -0.4098818898200989,
+        "n_tokens": 2,
+        "mean_logp": -0.20494094491004944,
+        "bits_per_token": 0.2956672848968266
+      },
+      "greedy_gen": " 0 1",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-js-1",
+      "year": 1995,
+      "category": "icl-language",
+      "kind": "icl",
+      "concept": "JavaScript arrow function",
+      "prompt": "// JavaScript\nconst sq = x => x * x;\nconsole.log(sq(4));\n// Output: 16\n\nconst cube = x => x * x * x;\nconsole.log(cube(3));\n// Output:",
+      "expected_modern": "27",
+      "scored_target": " 27",
+      "score": {
+        "sum_logp": -0.40547609329223633,
+        "n_tokens": 2,
+        "mean_logp": -0.20273804664611816,
+        "bits_per_token": 0.29248917449587003
+      },
+      "greedy_gen": " 27",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-js-2",
+      "year": 1995,
+      "category": "icl-language",
+      "kind": "icl",
+      "concept": "JavaScript template literal",
+      "prompt": "// JavaScript\nconst name = 'Alice';\nconsole.log(`Hello, ${name}!`);\n// Output: Hello, Alice!\n\nconst name2 = 'Bob';\nconsole.log(`Hello, ${name2}!`);\n// Output:",
+      "expected_modern": "Hello, Bob!",
+      "scored_target": " Hello, Bob!",
+      "score": {
+        "sum_logp": -2.178499698638916,
+        "n_tokens": 4,
+        "mean_logp": -0.544624924659729,
+        "bits_per_token": 0.7857276779511164
+      },
+      "greedy_gen": " Hello, Bob!",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-mini-1",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "post-1930 keyword 'def'",
+      "prompt": "# Python defines functions with the keyword 'def'.\n# Example:\ndef add(a, b):\n    return a + b\n\nadd(2, 3)\n# Output: 5\n\n# Now define a function 'sub' that subtracts b from a.\ndef sub(a, b):\n    return",
+      "expected_modern": "a - b",
+      "scored_target": " a - b",
+      "score": {
+        "sum_logp": -0.1466093510389328,
+        "n_tokens": 3,
+        "mean_logp": -0.048869783679644264,
+        "bits_per_token": 0.0705041945639392
+      },
+      "greedy_gen": " a - b",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "extra-icl-mini-2",
+      "year": 1991,
+      "category": "icl-python",
+      "kind": "icl",
+      "concept": "Python boolean operators",
+      "prompt": "# Python\nprint(True and False)\n# Output: False\nprint(True or False)\n# Output: True\nprint(not True)\n# Output:",
+      "expected_modern": "False",
+      "scored_target": " False",
+      "score": {
+        "sum_logp": -0.7487412095069885,
+        "n_tokens": 1,
+        "mean_logp": -0.7487412095069885,
+        "bits_per_token": 1.0802052298649367
+      },
+      "greedy_gen": " True",
+      "greedy_contains_expected": false
+    },
+    {
+      "id": "ctrl-pre-1",
+      "year": 1492,
+      "category": "history-pre1930-control",
+      "kind": "completion",
+      "concept": "Columbus voyage",
+      "prompt": "In 1492, Christopher Columbus sailed across the Atlantic Ocean and reached",
+      "expected_modern": "the Americas",
+      "scored_target": " the Americas",
+      "score": {
+        "sum_logp": -2.1682472229003906,
+        "n_tokens": 2,
+        "mean_logp": -1.0841236114501953,
+        "bits_per_token": 1.5640597579498303
+      },
+      "greedy_gen": " the Americas. He was looking for a new route to India, but instead he found a new continent. This discovery changed the world forever. It opened up new",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-2",
+      "year": 1865,
+      "category": "history-pre1930-control",
+      "kind": "completion",
+      "concept": "Lincoln assassination",
+      "prompt": "President Abraham Lincoln was assassinated by John Wilkes Booth in the year",
+      "expected_modern": "1865",
+      "scored_target": " 1865",
+      "score": {
+        "sum_logp": -0.17532384395599365,
+        "n_tokens": 3,
+        "mean_logp": -0.05844128131866455,
+        "bits_per_token": 0.08431294674163417
+      },
+      "greedy_gen": " 1865. Booth was a member of the Confederate Army and was a part of the conspiracy to assassinate Lincoln. Booth was a part of the conspiracy to",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-3",
+      "year": 1859,
+      "category": "history-pre1930-control",
+      "kind": "completion",
+      "concept": "Origin of Species",
+      "prompt": "Charles Darwin published \"On the Origin of Species\" in the year",
+      "expected_modern": "1859",
+      "scored_target": " 1859",
+      "score": {
+        "sum_logp": -0.29822203516960144,
+        "n_tokens": 3,
+        "mean_logp": -0.09940734505653381,
+        "bits_per_token": 0.14341448374099935
+      },
+      "greedy_gen": " 1859. This book was a landmark in the history of science. It was the first time that a scientist had proposed a theory of evolution. Darwin's",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-4",
+      "year": 1789,
+      "category": "history-pre1930-control",
+      "kind": "completion",
+      "concept": "French Revolution",
+      "prompt": "The French Revolution began in the year",
+      "expected_modern": "1789",
+      "scored_target": " 1789",
+      "score": {
+        "sum_logp": -0.21797573566436768,
+        "n_tokens": 3,
+        "mean_logp": -0.07265857855478923,
+        "bits_per_token": 0.10482417095903561
+      },
+      "greedy_gen": " 1789. The French Revolution was a period of great change in France. The French Revolution was a time of great change in France. The French Revolution was",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-5",
+      "year": 1879,
+      "category": "invention-pre1930-control",
+      "kind": "completion",
+      "concept": "incandescent light bulb",
+      "prompt": "Thomas Edison patented a practical incandescent electric light bulb in the year",
+      "expected_modern": "1879",
+      "scored_target": " 1879",
+      "score": {
+        "sum_logp": -0.7500243186950684,
+        "n_tokens": 3,
+        "mean_logp": -0.25000810623168945,
+        "bits_per_token": 0.36068545504249955
+      },
+      "greedy_gen": " 1879. The light bulb was a major breakthrough in the history of lighting. It was the first practical electric light bulb that could be used in homes and",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-6",
+      "year": 1905,
+      "category": "physics-pre1930-control",
+      "kind": "completion",
+      "concept": "special relativity",
+      "prompt": "Albert Einstein published his theory of special relativity in the year",
+      "expected_modern": "1905",
+      "scored_target": " 1905",
+      "score": {
+        "sum_logp": -0.09586570411920547,
+        "n_tokens": 3,
+        "mean_logp": -0.031955234706401825,
+        "bits_per_token": 0.04610165864136881
+      },
+      "greedy_gen": " 1905. The theory of special relativity is a theory of the laws of physics that describes the relationship between space and time. The theory of special relativity is",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-7",
+      "year": 1903,
+      "category": "invention-pre1930-control",
+      "kind": "completion",
+      "concept": "Wright brothers flight",
+      "prompt": "The Wright brothers made the first powered, controlled airplane flight near Kitty Hawk in the year",
+      "expected_modern": "1903",
+      "scored_target": " 1903",
+      "score": {
+        "sum_logp": -0.16210059821605682,
+        "n_tokens": 3,
+        "mean_logp": -0.05403353273868561,
+        "bits_per_token": 0.07795390972381318
+      },
+      "greedy_gen": " 1903. The Wright brothers were the first to make a successful airplane flight. The Wright brothers were the first to make a successful airplane flight. The Wright",
+      "greedy_contains_expected": true
+    },
+    {
+      "id": "ctrl-pre-8",
+      "year": 1914,
+      "category": "history-pre1930-control",
+      "kind": "completion",
+      "concept": "World War I start",
+      "prompt": "World War I began in the year",
+      "expected_modern": "1914",
+      "scored_target": " 1914",
+      "score": {
+        "sum_logp": -0.22000008821487427,
+        "n_tokens": 3,
+        "mean_logp": -0.07333336273829143,
+        "bits_per_token": 0.10579767875424453
+      },
+      "greedy_gen": " 1914. The war was fought between the Allied Powers and the Central Powers. The Allied Powers included the United States, France, Russia, Italy, Japan",
+      "greedy_contains_expected": true
+    }
+  ]
+}
